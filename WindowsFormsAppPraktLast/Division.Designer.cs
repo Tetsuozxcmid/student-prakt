@@ -133,9 +133,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(96, 292);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.Size = new System.Drawing.Size(125, 13);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Код предприятия";
+            this.label6.Text = "Название предприятия";
             // 
             // button1
             // 

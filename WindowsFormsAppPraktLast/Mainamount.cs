@@ -35,8 +35,6 @@ namespace WindowsFormsAppPraktLast
             textBox2.Text = Form1.VS.Tables["ОсновноеСредство"].Rows[n]["Название"].ToString();
             textBox3.Text = Form1.VS.Tables["ОсновноеСредство"].Rows[n]["Тип"].ToString();
             textBox4.Text = Form1.VS.Tables["ОсновноеСредство"].Rows[n]["Стоимость"].ToString();
-            
-            
         }
 
         private void Mainamount_Load(object sender, EventArgs e)

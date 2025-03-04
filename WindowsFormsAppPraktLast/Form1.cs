@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace WindowsFormsAppPraktLast
             InitializeComponent();
         }
 
-        public static NpgsqlConnection connection = new NpgsqlConnection("Server=127.0.0.1;User Id=postgres;Password=123;Database=debitfund;");
+        public static NpgsqlConnection connection = new NpgsqlConnection("Server=Server;User Id=User Id;Password=password;Database=database;");
         public static DataSet VS = new DataSet();
         public static void Table_Fill(string name,string sql)
         {
@@ -54,10 +55,6 @@ namespace WindowsFormsAppPraktLast
             
         }
         
-        
-
-        
-
         private void предприятиеToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Company company = new Company();
@@ -97,6 +94,27 @@ namespace WindowsFormsAppPraktLast
 
             sql = " SELECT defect.Код,defect.Название FROM defect ORDER BY defect.Код";
             Table_Fill("Дефект", sql);
+        }
+
+        
+
+
+        private void закреплениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Locking locking = new Locking();
+            locking.Show();
+        }
+
+        private void списаниеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Debiting deb = new Debiting();
+            deb.Show();
+        }
+
+        private void списанияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DebitingAmount debam = new DebitingAmount();    
+            debam.Show();
         }
     }
 }

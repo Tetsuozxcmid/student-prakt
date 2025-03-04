@@ -37,21 +37,30 @@ namespace WindowsFormsAppPraktLast
             textBox3.Text = Form1.VS.Tables["Подразделение"].Rows[n]["Краткоеназвание"].ToString();
             textBox4.Text = Form1.VS.Tables["Подразделение"].Rows[n]["Руководитель"].ToString();
             textBox5.Text = Form1.VS.Tables["Подразделение"].Rows[n]["МатериальноОтветственный"].ToString();
-            comboBox1.Text = Form1.VS.Tables["Подразделение"].Rows[n]["КодПредприятия"].ToString();
+            comboBox1.SelectedValue = Form1.VS.Tables["Подразделение"].Rows[n]["КодПредприятия"].ToString();
+            
             
         }
 
         private void Division_Load(object sender, EventArgs e)
         {
+            
             Form1.VS.Tables["Компания"].DefaultView.Sort = "Название";
             comboBox1.DataSource = Form1.VS.Tables["Компания"].DefaultView;
+
+            
             comboBox1.DisplayMember = "Название";
+            comboBox1.ValueMember = "Код";
+
+            
             if (Form1.VS.Tables["Подразделение"].Rows.Count > 0)
             {
                 n = 0; FieldsForm_Fill();
             }
             textBox1.Enabled = true;
         }
+
+
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -92,15 +101,13 @@ namespace WindowsFormsAppPraktLast
 
         private void button5_Click(object sender, EventArgs e)
         {
-            string kodPredpr = Form1.VS.Tables["Компания"].DefaultView[comboBox1.SelectedIndex]["Код"].ToString();
-
             
+            string kodPredpr = comboBox1.SelectedValue.ToString();
 
             string sql;
             if (n < Form1.VS.Tables["Подразделение"].Rows.Count)
             {
                 
-
                 sql = "UPDATE division SET Название='" + textBox2.Text + "', КраткоеНазвание='" + textBox3.Text + "', Руководитель='" + textBox4.Text + "', МатериальноОтветственный='" + textBox5.Text + "', КодПредприятия=" + kodPredpr + " WHERE Код=" + textBox1.Text;
 
                 MessageBox.Show("SQL (UPDATE): " + sql);
@@ -113,10 +120,8 @@ namespace WindowsFormsAppPraktLast
             else
             {
                 
-
-                
                 sql = "INSERT INTO division (Название, КраткоеНазвание, Руководитель, МатериальноОтветственный, КодПредприятия) " +
-                      "VALUES ('" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', " + kodPredpr + ")";
+                       "VALUES ('" + textBox2.Text + "', '" + textBox3.Text + "', '" + textBox4.Text + "', '" + textBox5.Text + "', " + kodPredpr + ")";
 
                 MessageBox.Show("SQL (INSERT): " + sql);
 
@@ -125,9 +130,13 @@ namespace WindowsFormsAppPraktLast
 
                 textBox1.Enabled = false;
 
+                
                 Form1.VS.Tables["division"].Rows.Add(new object[] { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, kodPredpr });
             }
         }
+
+
+
 
 
 

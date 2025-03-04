@@ -35,10 +35,13 @@
             this.основноеСредствоToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.дефектToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.операцииToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.закреплениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списаниеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сменаПароляToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.списанияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,12 +99,31 @@
             // 
             // операцииToolStripMenuItem
             // 
+            this.операцииToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.закреплениеToolStripMenuItem,
+            this.списаниеToolStripMenuItem});
             this.операцииToolStripMenuItem.Name = "операцииToolStripMenuItem";
             this.операцииToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.операцииToolStripMenuItem.Text = "Операции";
             // 
+            // закреплениеToolStripMenuItem
+            // 
+            this.закреплениеToolStripMenuItem.Name = "закреплениеToolStripMenuItem";
+            this.закреплениеToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.закреплениеToolStripMenuItem.Text = "Закрепление";
+            this.закреплениеToolStripMenuItem.Click += new System.EventHandler(this.закреплениеToolStripMenuItem_Click);
+            // 
+            // списаниеToolStripMenuItem
+            // 
+            this.списаниеToolStripMenuItem.Name = "списаниеToolStripMenuItem";
+            this.списаниеToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.списаниеToolStripMenuItem.Text = "Списание";
+            this.списаниеToolStripMenuItem.Click += new System.EventHandler(this.списаниеToolStripMenuItem_Click);
+            // 
             // отчетыToolStripMenuItem
             // 
+            this.отчетыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.списанияToolStripMenuItem});
             this.отчетыToolStripMenuItem.Name = "отчетыToolStripMenuItem";
             this.отчетыToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.отчетыToolStripMenuItem.Text = "Отчеты";
@@ -118,14 +140,21 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.оПрограммеToolStripMenuItem.Text = "о программе";
             // 
             // сменаПароляToolStripMenuItem
             // 
             this.сменаПароляToolStripMenuItem.Name = "сменаПароляToolStripMenuItem";
-            this.сменаПароляToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.сменаПароляToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.сменаПароляToolStripMenuItem.Text = "смена пароля";
+            // 
+            // списанияToolStripMenuItem
+            // 
+            this.списанияToolStripMenuItem.Name = "списанияToolStripMenuItem";
+            this.списанияToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.списанияToolStripMenuItem.Text = "Списания";
+            this.списанияToolStripMenuItem.Click += new System.EventHandler(this.списанияToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -157,6 +186,9 @@
         private System.Windows.Forms.ToolStripMenuItem сервисныеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem сменаПароляToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem закреплениеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списаниеToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem списанияToolStripMenuItem;
     }
 }
 
